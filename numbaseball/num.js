@@ -23,7 +23,8 @@ var narrayj = narray.join('');
 
 form.addEventListener('submit', function callback(event) {
 	narray = narrayj.split('');
-//왜 숫자배열이 이 함수안에서는 적용이 안되지???????
+//왜 숫자배열이 이 함수안에서는 적용이 안되지??????? narrayj라는 변수를 다시 선언해서 split해주는 방식으로 narray 설정\
+	//next to do : 10번이상 틀리면 답 + 오류 메시지 출력후 새로운 게임 시작 + 함수 만들어서 선언
 	event.preventDefault();
 	var 답 = input.value;
 	console.log(답)
