@@ -1,12 +1,11 @@
 var body = document.body;
 
 var 숫자후보 = [1,2,3,4,5,6,7,8,9];
-
-var 숫자배열 = [];
+var narray = [];
 
 for (var i = 0; i<4; i+=1){
 	var temp = 숫자후보.splice(Math.floor(Math.random() * (9-i)), 1)[0];
-	숫자배열.push(temp);
+	narray.push(temp);
 }
 
 var result = document.createElement('h1');
@@ -20,34 +19,33 @@ input.maxLength = 4;
 var button = document.createElement('button');
 button.textContent = '입력';
 form.append(button);
-console.log(숫자배열)
-
+var narrayj = narray.join('');
 
 form.addEventListener('submit', function callback(event) {
-	console.log(숫자배열)
+	narray = narrayj.split('');
 //왜 숫자배열이 이 함수안에서는 적용이 안되지???????
 	event.preventDefault();
 	var 답 = input.value;
 	console.log(답)
-	console.log(숫자배열.join(''))
-	if (답 === 숫자배열.join(``)) {
+	console.log(narrayj)
+	if (답 === narrayj) {
 		result.textContent = '홈런';
 		input.value = '';
 		input.focus();
 		var 숫자후보 = [1,2,3,4,5,6,7,8,9];
-		var 숫자배열 = [];
+		var narray = [];
 		for (var i = 0; i<4; i++){
 			var temp = 숫자후보.splice(Math.floor(Math.random() * (9-i)), 1)[0];;
-			숫자배열.push(temp);
+			narray.push(temp);
 		}
 	} else {
 		var 답배열 = 답.split('');
 		var strike = 0;
 		var ball = 0;
 		for (var i =0; i < 3; i++){
-			if(답배열[i] === 숫자배열[i]){
+			if(답배열[i] === narray[i]){
 				strike++;
-			} else if (숫자배열.indexOf(답배열[i]) > -1){
+			} else if (narray.indexOf(답배열[i]) > -1){
 				ball++;
 			}
 		}
