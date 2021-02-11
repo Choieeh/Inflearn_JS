@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>chrome</title>
+		<meta charset = "utf-8" />
 		<link rel = "stylesheet" href = "index.css" />
 	</head>
 	<body>
@@ -16,11 +17,14 @@
 		<h4 id = "name_display" class = "disappear">
 				name
 			</h4>
-		<form id = "todo_list">
-			<div id = "todo_input">
-				<input type = "text" placeholder = "Write To Do here">
+		<container id = "todo">
+			<form id = "todo_input">
+				<input id = "todo_in" type = "text" placeholder = "Write To Do here">
+			</form>
+			<div id = "todo_list">
+				
 			</div>
-		</form>
+		</container>
 		<script src = "clock.js"></script>
 		<script src = "greeting.js"></script>
 		<script src = "todo.js"></script>
